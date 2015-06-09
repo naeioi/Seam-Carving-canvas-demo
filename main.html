@@ -1,0 +1,135 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<style>
+body{
+font-family:ubuntu;
+background-color:#F0F0F0;
+padding:0;
+margin:0;
+}
+#display{
+//background-color:#F8F8F8;
+margin:auto;
+border:1px #eee solid;
+height:100%;
+width:1000px;
+//float:left;
+}
+#canvas,#cmpCanvas{
+box-shadow:0 0 6px 1px #888888;
+z-index:-1;
+}
+#canvas{
+cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALUlEQVQIW2NsaGjgYWBgaAZiAyC+AMS1jEDBfqgAkAKDCyDB/TAejMapEsNMAFsQD3sF4CVwAAAAAElFTkSuQmCC) 2 2, crosshair;
+}
+#controller{
+
+//height:100%;
+}
+#frame{
+margin:auto;
+overflow:visible;
+float:left;
+}
+#cmpFrame{
+margin:auto;
+overflow:visible;
+float:right;
+}
+#header,#scrollBar,#brush{
+float:left;
+}
+#btnWrap{
+float:right;
+}
+#clear{
+clear:both;
+}
+#container{
+background-color:#F7F7F7;
+box-shadow:0 0 6px 1px #888888;
+margin:auto;
+width:378px;
+height:180px;
+margin-bottom:20px;
+margin-top:20px;
+padding:0px 50px 10px 50px;
+}
+#container *{
+//margin:auto;
+margin-top:10px;
+text-align:center;
+}
+#scrollBar{
+margin-top:19px;
+}	
+#brush{
+display:none;
+}
+#btnWrap{
+//width:100%;
+}
+.btnWrap{
+display:inline;
+}
+#demoRow{
+margin-top:25px;
+padding-top:10px;
+border-top:1px #ADADAD dotted;
+}
+</style>
+<script src="draw.js"></script>
+</head>
+<body>
+<div id="controller">
+	<div id="container">
+		<div id="header"></div>
+		<div id="scrollBar">
+		<div id="widthWrap">宽 <input id="width" type="range" min="0" step="1" /><span id="widthDisplay"></span></div>
+		<div id="heightWrap">高 <input id="height" type="range" min="0" step="1" /><span id="heightDisplay"></span></div>
+		</div>
+		<div id="brush">
+		<form>
+			enhance<input type="radio" name="brush" id="enhance" value="enhance" />
+			removal<input type="radio" name="brush" id="removal" value="removal" />
+			void<input type="radio" name="brush" id="void" value="void" />
+		</form>
+		</div>
+		<div id="btnWrap">
+			<div class="btnRow" id="btnFirstRow">
+				<div class="btnWrap"><button id="btnRun">Run</button></div>
+				<div class="btnWrap"><button id="btnPause">Pause</button></div>
+				<div class="btnWrap"><button id="btnReset">Reset</button></div>
+			</div>
+			<div class="btnRow" id="btnSecondRow">
+				<div class="btnWrap"><button id="btnCarveX">Carve X</button></div>
+				<div class="btnWrap"><button id="btnCarveY">Carve Y</button></div>
+				<div class="btnWrap"><button id="btnCarveStep">Step</button></div>
+			</div>
+			<div class="btnRow" id="btnThirdRow">
+				<div class="btnWrap"><button id="btnComp">Compare</button></div>
+				<div class="btnWrap"><button id="btnDownload">Download</div>
+			</div>
+		</div>
+		<div id="clear"></div>
+		<div id="demoRow">
+			demo 
+			<!--a href="javascript:ctx.loadImage('201141239920529.jpg');"> 1</a-->
+			<a href="javascript:ctx.loadImage('QQ图片20141213152800.jpg');"> 1</a>
+			<a href="javascript:ctx.loadImage('0b29e1ba11b5772ab449cc89522e3f31_r (1).jpg');"> 2</a>
+			<a href="javascript:ctx.loadImage('7727434_220824876000_2.jpg');"> 3</a>
+		</div>
+	</div>
+</div>
+<div id="display">
+<div id="frame">
+<canvas id="canvas"></canvas>
+</div>
+<div id="cmpFrame">
+<canvas id="cmpCanvas"></canvas>
+</div>
+</div>
+
+</body>
+</html>
